@@ -2,7 +2,7 @@ Source: latte-dock
 Section: kde
 Priority: optional
 Maintainer: Uri Herrera <uri_herrera@nxos.org>
-Build-Depends: plasma-desktop, plasma-pa, plasma-workspace (>= 4:5.9.0~), libc6 (>= 2.29), libkf5activities5, libkf5archive5, libkf5configcore5, libkf5configgui5, libkf5coreaddons5, libkf5crash5, libkf5dbusaddons5, libkf5declarative5, libkf5globalaccel5, libkf5guiaddons5, libkf5i18n5, libkf5iconthemes5, libkf5kiogui5, libkf5kiowidgets5, libkf5newstuff5, libkf5notifications5, libkf5package5, libkf5plasma5, libkf5plasmaquick5, libkf5quickaddons5, libkf5service5, libkf5waylandclient5, libkf5widgetsaddons5, libkf5windowsystem5, libkf5xmlgui5, libqt5core5a, libqt5dbus5, libqt5gui5, libqt5qml5, libqt5quick5 , libqt5widgets5, libqt5x11extras5, libstdc++6 (>= 5.2), libx11-6, libxcb-randr0, libxcb-shape0, libxcb1
+Build-Depends: libkf5config-dev, libkdecorations2-dev, libqt5x11extras5-dev, qtdeclarative5-dev, libkf5guiaddons-dev, libkf5configwidgets-dev, libkf5windowsystem-dev, libkf5coreaddons-dev, libkf5iconthemes-dev, frameworkintegration, libkf5kcmutils-dev, libkf5style-dev, libkf5wayland-dev, qtbase5-dev, qtdeclarative5-dev
 Standards-Version: 3.9.6
 
 Package: latte-dock
