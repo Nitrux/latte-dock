@@ -16,16 +16,16 @@ apt -qq update
 
 ### Install Dependencies
 
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install devscripts lintian build-essential automake autotools-dev
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install devscripts lintian build-essential automake autotools-dev cmake extra-cmake-modules
 mk-build-deps -i -t "apt-get --yes" -r
 
 ### Clone repo.
 
 git clone https://github.com/KDE/latte-dock.git
 
-mv kquickimageeditor/* .
+mv latte-dock/* .
 
-rm -rf kquickimageeditor LICENSES README.md
+rm -rf latte-dock LICENSES README.md
 
 ### Build Deb
 
