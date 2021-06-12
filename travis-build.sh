@@ -16,7 +16,8 @@ apt -qq update
 
 ### Install Dependencies
 
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install devscripts lintian build-essential automake autotools-dev cmake extra-cmake-modules
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install devscripts lintian build-essential automake autotools-dev cmake extra-cmake-modules qtbase5-dev
+
 mk-build-deps -i -t "apt-get --yes" -r
 
 ### Clone repo.
