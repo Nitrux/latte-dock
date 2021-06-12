@@ -1,0 +1,5 @@
+latte-dock (0.9.11+nitrux+git+0.9.12) nitrux; urgency=medium
+
+  * Create package.
+
+ -- Uri Hererra <uri_herrera@nxos.org>  Fri, 11 Jun 2021 22:45:00 -0500
