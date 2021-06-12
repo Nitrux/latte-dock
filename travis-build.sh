@@ -23,6 +23,9 @@ mk-build-deps -i -t "apt-get --yes" -r
 
 git clone https://github.com/KDE/latte-dock.git
 
+mv kquickimageeditor/* .
+
+rm -rf kquickimageeditor LICENSES README.md
 
 ### Build Deb
 
