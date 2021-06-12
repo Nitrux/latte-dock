@@ -1,17 +1,5 @@
-latte-dock (0.9.11+nitrux+git+0.9.12+0.0.3) nitrux; urgency=medium
+latte-dock (0.9.12+0.0.4+nitrux+git) nitrux; urgency=medium
 
   * Create package.
 
- -- Uri Hererra <uri_herrera@nxos.org>  Sat, 12 Jun 2021 02:11:00 -0500
-
-latte-dock (0.9.11+nitrux+git+0.9.12+0.0.2) nitrux; urgency=medium
-
-  * Create package.
-
- -- Uri Hererra <uri_herrera@nxos.org>  Fri, 11 Jun 2021 22:56:00 -0500
-
-latte-dock (0.9.11+nitrux+git+0.9.12) nitrux; urgency=medium
-
-  * Create package.
-
- -- Uri Hererra <uri_herrera@nxos.org>  Fri, 11 Jun 2021 22:45:00 -0500
+ -- Uri Hererra <uri_herrera@nxos.org>  Sat, 12 Jun 2021 05:06:00 -0500
