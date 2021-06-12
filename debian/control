@@ -2,7 +2,7 @@ Source: latte-dock
 Section: kde
 Priority: optional
 Maintainer: Uri Herrera <uri_herrera@nxos.org>
-Build-Depends: qtbase5-dev, qtdeclarative5-dev
+Build-Depends: qtbase5-dev, qtdeclarative5-dev, libkf5activities-dev, libkf5archive-dev, libkf5coreaddons-dev, libkf5guiaddons-dev, libkf5crash-dev, libkf5dbusaddons-dev, libkf5declarative-dev, libkf5globalaccel-dev, libkf5kirigami2-5, libkf5i18n-dev, libkf5iconthemes-dev, libkf5kio-dev, libkf5newstuff-dev, libkf5notifications-dev, libkf5plasma-dev, libkf5plasmaquick5, libkf5wayland-dev, libkf5windowsystem-dev, libkf5xmlgui-dev
 Standards-Version: 3.9.6
 
 Package: latte-dock
