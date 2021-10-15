@@ -1,3 +1,9 @@
+latte-dock (0.10.200+0.0.1+nitrux+git) nitrux; urgency=medium
+
+  * Update package.
+
+ -- Uri Hererra <uri_herrera@nxos.org>  Thu, 14 Oct 2021 13:45:00 -0500
+
 latte-dock (0.10.100+0.0.1+nitrux+git) nitrux; urgency=medium
 
   * Update package.
