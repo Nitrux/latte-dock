@@ -34,15 +34,19 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 ### Install Package Build Dependencies #1
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
+	kirigami2-dev \
+	libkf5activities-dev \
+	libkf5archive-dev \
+	libkf5crash-dev \
+	libkf5declarative-dev \
 	libkf5i18n-dev \
 	libkf5kio-dev \
+	libkf5newstuff-dev \
 	libkf5notifications-dev \
+	libkf5plasma-dev \
 	libkf5solid-dev \
-	libkf5syntaxhighlighting-dev \
 	libqt5svg5-dev \
 	libqt5x11extras5-dev \
-	libxcb-icccm4-dev \
-	libxcb-shape0-dev \
 	qml-module-qtgraphicaleffects \
 	qml-module-qtquick-controls2 \
 	qml-module-qtquick-shapes \
