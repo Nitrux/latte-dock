@@ -46,6 +46,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libkf5plasma-dev \
 	libkf5solid-dev \
 	libqt5svg5-dev \
+	libkf5wayland-dev \
 	libqt5x11extras5-dev \
 	qml-module-qtgraphicaleffects \
 	qml-module-qtquick-controls2 \
