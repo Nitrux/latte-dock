@@ -52,8 +52,10 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libxcb-util-dev \
 	libxcb-randr0-dev \
 	qml-module-qtgraphicaleffects \
-	qml-module-qtquick-controls2 \
+	qml-module-qtquick-controls \
 	qml-module-qtquick-shapes \
+	qml-module-qtquick-controls-styles-breeze \
+	plasma-workspace-dev \
 	qtbase5-dev \
 	qtdeclarative5-dev \
 	qtquickcontrols2-5-dev
