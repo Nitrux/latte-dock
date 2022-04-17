@@ -48,8 +48,9 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libqt5svg5-dev \
 	libkf5wayland-dev \
 	libqt5x11extras5-dev \
-	libxcb-shape0 \
+	libxcb-shape0-dev \
 	libxcb-util-dev \
+	libxcb-randr0-dev \
 	qml-module-qtgraphicaleffects \
 	qml-module-qtquick-controls2 \
 	qml-module-qtquick-shapes \
