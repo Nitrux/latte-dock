@@ -52,6 +52,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libkf5wayland-dev \
 	libqt5svg5-dev \
 	libqt5x11extras5-dev \
+	libwayland-dev \
 	libx11-xcb-dev \
 	libxcb-randr0-dev \
 	libxcb-shape0-dev \
@@ -70,11 +71,10 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	qtmultimedia5-dev  \
 	qtquickcontrols2-5-dev  \
 	qttools5-dev \
-	x11-xkb-utils \
-	libwayland-dev \
 	qtwayland5 \
 	qtwayland5-dev-tools \
 	qtwayland5-private-dev \
+	x11-xkb-utils \
 	xcb
 
 ### Clone Repository
