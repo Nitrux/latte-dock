@@ -71,6 +71,10 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	qtquickcontrols2-5-dev  \
 	qttools5-dev \
 	x11-xkb-utils \
+	libwayland-dev \
+	qtwayland5 \
+	qtwayland5-dev-tools \
+	qtwayland5-private-dev \
 	xcb
 
 ### Clone Repository
