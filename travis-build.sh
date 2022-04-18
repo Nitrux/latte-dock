@@ -52,9 +52,12 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libkf5wayland-dev \
 	libqt5svg5-dev \
 	libqt5x11extras5-dev \
+	libx11-xcb-dev \
 	libxcb-randr0-dev \
 	libxcb-shape0-dev \
 	libxcb-util-dev \
+	libxcb-xkb-dev \
+	libxkbcommon-x11-dev \
 	plasma-workspace-dev \
 	qml-module-qtgraphicaleffects \
 	qml-module-qtquick-controls \
@@ -66,7 +69,9 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	qtdeclarative5-dev \
 	qtmultimedia5-dev  \
 	qtquickcontrols2-5-dev  \
-	qttools5-dev
+	qttools5-dev \
+	x11-xkb-utils \
+	xcb
 
 ### Clone Repository
 
