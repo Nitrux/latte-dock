@@ -34,30 +34,39 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 ### Install Package Build Dependencies #1
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
+	appstream \
 	kirigami2-dev \
 	libkf5activities-dev \
+	libkf5activitiesstats-dev \
 	libkf5archive-dev \
 	libkf5crash-dev \
 	libkf5declarative-dev \
 	libkf5i18n-dev \
+	libkf5kcmutils-dev \
 	libkf5kio-dev \
+	libkf5networkmanagerqt-dev \
 	libkf5newstuff-dev \
 	libkf5notifications-dev \
 	libkf5plasma-dev \
 	libkf5solid-dev \
-	libqt5svg5-dev \
 	libkf5wayland-dev \
+	libqt5svg5-dev \
 	libqt5x11extras5-dev \
+	libxcb-randr0-dev \
 	libxcb-shape0-dev \
 	libxcb-util-dev \
-	libxcb-randr0-dev \
+	plasma-workspace-dev \
 	qml-module-qtgraphicaleffects \
 	qml-module-qtquick-controls \
 	qml-module-qtquick-shapes \
-	plasma-workspace-dev \
+	qt5-qmake  \
 	qtbase5-dev \
+	qtbase5-dev-tools  \
+	qtchooser  \
 	qtdeclarative5-dev \
-	qtquickcontrols2-5-dev
+	qtmultimedia5-dev  \
+	qtquickcontrols2-5-dev  \
+	qttools5-dev
 
 ### Clone Repository
 
@@ -80,6 +89,7 @@ cmake \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=true \
 	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make
