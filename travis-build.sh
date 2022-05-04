@@ -79,7 +79,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 ### Clone Repository
 
-git clone --depth 1 --branch v0.10 https://github.com/KDE/latte-dock.git
+git clone --depth 1 --branch master https://invent.kde.org/plasma/latte-dock.git
 
 rm -rf latte-dock/{CHANGELOG.md,LICENSES,README.md,INSTALLATION.md,NEWFEATURES.md,logo.png}
 
@@ -120,7 +120,7 @@ checkinstall -D -y \
 	--install=no \
 	--fstrans=yes \
 	--pkgname=latte-dock \
-	--pkgversion=0.10.801+nitrux+git \
+	--pkgversion=0.10.802+nitrux+git \
 	--pkgarch=amd64 \
 	--pkgrelease="1" \
 	--pkglicense=LGPL-3 \
