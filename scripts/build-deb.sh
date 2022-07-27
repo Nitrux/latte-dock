@@ -1,91 +1,39 @@
-#!/bin/bash
+#! /bin/bash
 
 set -x
 
-### Install Build Tools #1
-
-DEBIAN_FRONTEND=noninteractive apt -qq update
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	appstream \
-	automake \
-	autotools-dev \
-	build-essential \
-	checkinstall \
-	cmake \
-	curl \
-	devscripts \
-	equivs \
-	extra-cmake-modules \
-	gettext \
-	git \
-	gnupg2 \
-	lintian \
-	wget
-
-### Add Neon Sources
+### Update sources
 
 wget -qO /etc/apt/sources.list.d/neon-user-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.neon.user
+
+wget -qO /etc/apt/sources.list.d/nitrux-main-compat-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux
+
+wget -qO /etc/apt/sources.list.d/nitrux-testing-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux.testing
 
 DEBIAN_FRONTEND=noninteractive apt-key adv --keyserver keyserver.ubuntu.com --recv-keys \
 	55751E5D > /dev/null
 
+curl -L https://packagecloud.io/nitrux/repo/gpgkey | apt-key add -;
+curl -L https://packagecloud.io/nitrux/compat/gpgkey | apt-key add -;
+curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
+
 DEBIAN_FRONTEND=noninteractive apt -qq update
 
-### Install Package Build Dependencies #1
+### Install Package Build Dependencies #2
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	appstream \
-	kirigami2-dev \
-	libkf5activities-dev \
-	libkf5activitiesstats-dev \
-	libkf5archive-dev \
-	libkf5crash-dev \
-	libkf5declarative-dev \
-	libkf5i18n-dev \
-	libkf5kcmutils-dev \
-	libkf5kio-dev \
-	libkf5networkmanagerqt-dev \
-	libkf5newstuff-dev \
-	libkf5notifications-dev \
-	libkf5plasma-dev \
-	libkf5solid-dev \
-	libkf5wayland-dev \
-	libqt5svg5-dev \
-	libqt5x11extras5-dev \
-	libwayland-dev \
-	libx11-xcb-dev \
-	libxcb-randr0-dev \
-	libxcb-shape0-dev \
-	libxcb-util-dev \
-	libxcb-xkb-dev \
-	libxkbcommon-x11-dev \
-	plasma-workspace-dev \
-	qml-module-qtgraphicaleffects \
-	qml-module-qtquick-controls \
-	qml-module-qtquick-shapes \
-	qt5-qmake  \
-	qtbase5-dev \
-	qtbase5-dev-tools  \
-	qtchooser  \
-	qtdeclarative5-dev \
-	qtmultimedia5-dev  \
-	qtquickcontrols2-5-dev  \
-	qttools5-dev \
-	qtwayland5 \
-	qtwayland5-dev-tools \
-	qtwayland5-private-dev \
-	x11-xkb-utils \
-	xcb
+	mauikit-git \
+	mauikit-filebrowsing-git
 
-### Clone Repository
+### Download Source
 
-git clone --depth 1 --branch master https://invent.kde.org/plasma/latte-dock.git
+git clone --depth 1 --branch $LATTE_BRANCH https://invent.kde.org/plasma/latte-dock.git
 
 rm -rf latte-dock/{CHANGELOG.md,LICENSES,README.md,INSTALLATION.md,NEWFEATURES.md,logo.png}
 
 ### Compile Source
 
-mkdir -p latte-dock//build && cd latte-dock//build
+mkdir -p build && cd build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
@@ -98,13 +46,11 @@ cmake \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=true \
-	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
+	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ../latte-dock/
 
-make
+make -j$(nproc)
 
 ### Run checkinstall and Build Debian Package
-### DO NOT USE debuild, screw it
 
 >> description-pak printf "%s\n" \
 	'Dock based on plasma frameworks.' \
@@ -120,7 +66,7 @@ checkinstall -D -y \
 	--install=no \
 	--fstrans=yes \
 	--pkgname=latte-dock \
-	--pkgversion=0.10.802+nitrux+git \
+	--pkgversion=$PACKAGE_VERSION \
 	--pkgarch=amd64 \
 	--pkgrelease="1" \
 	--pkglicense=LGPL-3 \
