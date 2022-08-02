@@ -48,6 +48,7 @@ $APT_COMMAND install -qy --no-install-recommends \
     libxkbcommon-x11-dev \
     lintian \
     plasma-workspace-dev \
+    plasma-wayland-protocols \
     qml-module-qtgraphicaleffects \
     qml-module-qtquick-controls \
     qml-module-qtquick-shapes \
