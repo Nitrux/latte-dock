@@ -1,4 +1,4 @@
-# Latte Dock [![Build Status](https://travis-ci.org/Nitrux/latte-dock.svg?branch=main)](https://travis-ci.org/Nitrux/latte-dock)
+# Latte Dock
 
 Latte Dock from Git master.
 

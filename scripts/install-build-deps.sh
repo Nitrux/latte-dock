@@ -38,6 +38,7 @@ $APT_COMMAND install -qy --no-install-recommends \
     libkf5wayland-dev \
     libqt5svg5-dev \
     libqt5x11extras5-dev \
+    libsm-dev \
     libwayland-dev \
     libx11-xcb-dev \
     libxcb-randr0-dev \
